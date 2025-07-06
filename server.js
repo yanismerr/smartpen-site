@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
   try {
+    const { email } = req.body;
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
@@ -29,29 +30,21 @@ app.post('/create-checkout-session', async (req, res) => {
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
+      phone_number_collection: {
+        enabled: true,
+      },
+      customer_email: email || undefined,
       customer_creation: 'always',
       custom_fields: [
         {
-          key: 'prenom',
-          label: { type: 'custom', custom: 'Prénom' },
-          type: 'text',
-          required: true,
-        },
-        {
-          key: 'nom',
-          label: { type: 'custom', custom: 'Nom' },
-          type: 'text',
-          required: true,
-        },
-        {
-          key: 'telephone',
-          label: { type: 'custom', custom: 'Téléphone' },
+          key: 'full_name',
+          label: { type: 'custom', custom: 'Nom complet' },
           type: 'text',
           required: true,
         },
       ],
-      success_url: `${req.headers.origin || 'http://localhost:3000'}/success.html`,
-      cancel_url: `${req.headers.origin || 'http://localhost:3000'}/commande.html`,
+      success_url: 'https://smartpen-site-1cm9.vercel.app/success',
+      cancel_url: 'https://smartpen-site-1cm9.vercel.app/cancel',
     });
     res.json({ url: session.url });
   } catch (err) {
