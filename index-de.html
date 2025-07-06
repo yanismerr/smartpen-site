@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartingPen – Der Stift, der 113 Sprachen sofort übersetzt</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const timer = document.getElementById('timer');
+      if (!timer) return;
+      let t = 15 * 60;
+      function update() {
+        const m = Math.floor(t / 60);
+        const s = t % 60;
+        timer.textContent = `Sonderangebot: ${m}m${s.toString().padStart(2,'0')}s verbleibend!`;
+        if (t > 0) { t--; setTimeout(update, 1000); }
+      }
+      update();
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <a href="#" class="logo-link"><img src="smartingpen.png" alt="SmartingPen Logo" class="logo-img" style="height: 150px; max-width: 480px;"></a>
+      <nav class="nav">
+        <a href="index-de.html#funktionen">Funktionen</a>
+        <a href="index-de.html#wie">Wie funktioniert es?</a>
+        <a href="index-de.html#fuerwen">Für wen?</a>
+        <a href="index-de.html#bewertungen">Bewertungen</a>
+        <a href="index-de.html#faq">FAQ</a>
+        <select id="lang-switcher" onchange="location = this.value;" style="margin-left:18px;padding:6px 18px;border-radius:18px;font-size:1rem;">
+          <option value="index.html">Français</option>
+          <option value="index-en.html">English</option>
+          <option value="index-es.html">Español</option>
+          <option value="index-de.html" selected>Deutsch</option>
+          <option value="index-it.html">Italiano</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="container hero__container">
+        <div class="hero__left" style="display:flex;flex-direction:column;justify-content:flex-start;min-height:340px;position:relative;">
+          <span class="hero__badge hero__badge-large" style="position:absolute;top:-140px;left:0;">Neuheit 2025</span>
+          <h1 class="hero__title" style="margin-top:-60px;">SmartingPen <span class="highlight">– Der Stift mit ChatGPT, der 113 Sprachen übersetzt</span> – sofort</h1>
+          <div class="hero__subtitle" style="margin-top:-18px;">Sprechen, schreiben, verstehen Sie die Welt. Echtzeit-Übersetzung von Sprache und Text, überall, auch offline.</div>
+          <div class="hero__prices" style="margin-top:-10px;">
+            <span class="hero__old-price">129€</span>
+            <span class="hero__price">89€</span>
+            <span class="hero__payment-logos" style="display:inline-flex;align-items:center;gap:8px;margin-left:10px;vertical-align:middle;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" style="height:24px;width:auto;display:inline-block;vertical-align:middle;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:1px 2px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height:24px;width:auto;display:inline-block;vertical-align:middle;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:1px 2px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:24px;width:auto;display:inline-block;vertical-align:middle;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:1px 2px;">
+            </span>
+          </div>
+          <div class="hero__timer" id="timer">Sonderangebot: 15m00s verbleibend!</div>
+          <a href="commande-de.html" class="btn-primary" style="display:block;margin:0 auto;text-align:center;">Jetzt bestellen</a>
+        </div>
+        <div class="hero__right">
+          <div class="hero__img-bg">
+            <img src="image1.png" alt="SmartingPen Stift" class="hero__img hero__img-large">
+            <div class="product-features-box">
+              <div class="features-headline" style="font-size:1.18rem;color:#1a2233;text-align:center;line-height:1.7;margin-bottom:28px;font-weight:500;">
+                SmartingPen ist viel mehr als ein Übersetzer. Dank der integrierten ChatGPT-Intelligenz können Sie ohne Grenzen kommunizieren, 113 Sprachen sofort verstehen und mit der ganzen Welt interagieren – wo immer Sie sind. Genießen Sie ein reibungsloses, intuitives und mobiles Erlebnis zum Entdecken, Lernen und Austauschen – sogar ohne Internetverbindung.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNKTIONEN (image + text) -->
+    <section class="illustration-section fade-in" id="funktionen">
+      <div class="container features-row">
+        <img src="image2.png" alt="SmartingPen Funktionen" class="illustration-img-large features-img">
+        <div class="features-block">
+          <div class="features-headline" style="font-size:1.18rem;color:#1a2233;text-align:center;line-height:1.7;margin-bottom:28px;font-weight:500;">
+            SmartingPen ist viel mehr als ein Übersetzer. Dank der integrierten ChatGPT-Intelligenz können Sie ohne Grenzen kommunizieren, 113 Sprachen sofort verstehen und mit der ganzen Welt interagieren – wo immer Sie sind. Genießen Sie ein reibungsloses, intuitives und mobiles Erlebnis zum Entdecken, Lernen und Austauschen – sogar ohne Internetverbindung.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WIE FUNKTIONIERT ES (pictos) -->
+    <section class="how-section fade-in" id="wie">
+      <div class="container">
+        <h2 class="section-title">Wie funktioniert es?</h2>
+        <div class="how-pictos-list">
+          <div class="how-picto-item"><span class="how-picto-icon">🌐</span> <span class="how-picto-text">Übersetzt sofort <b>113 Sprachen</b> (Sprache + Text)</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">📶</span> <span class="how-picto-text">Funktioniert <b>offline</b></span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🤖</span> <span class="how-picto-text"><b>ChatGPT integriert</b>: Frage scannen, Antwort erhalten</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🎤</span> <span class="how-picto-text">Nimmt Sprache, Text und Video auf</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">👆</span> <span class="how-picto-text"><b>Touchscreen</b> mit einfacher Bedienung</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🧳</span> <span class="how-picto-text">Kompakt, diskret und überall transportierbar</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">📚</span> <span class="how-picto-text"><b>Wörterbuch</b></span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🎵</span> <span class="how-picto-text"><b>MP3-Player</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ILLUSTRATION (Produkt in Aktion) -->
+    <section class="illustration-section fade-in">
+      <div class="container features-row">
+        <img src="image4.png" alt="SmartingPen im Einsatz" class="features-img">
+        <div class="features-block" style="max-width:540px;">
+          <div class="features-headline" style="font-size:1.18rem;color:#1a2233;text-align:center;line-height:1.7;margin-bottom:28px;font-weight:500;">
+            <span style="font-size:1.6em;vertical-align:middle;">🌍</span><br>
+            Nutzen Sie SmartingPen auf Reisen, in Meetings, beim Lernen oder in internationalen Gesprächen.<br>
+            <b>Ein unverzichtbares Werkzeug, um überall zu verstehen und verstanden zu werden!</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÜR WEN? (pictos) -->
+    <section class="cible-section fade-in" id="fuerwen">
+      <div class="container">
+        <h2 class="section-title">Für wen ist SmartingPen?</h2>
+        <div class="cible__list">
+          <div class="cible-block">
+            <div class="cible-icon">✈️</div>
+            <div class="cible-title">Reisende</div>
+            <div class="cible-desc">Entdecken Sie die Welt ohne Sprachbarrieren.</div>
+          </div>
+          <div class="cible-block">
+            <div class="cible-icon">👩‍💼</div>
+            <div class="cible-title">Berufstätige</div>
+            <div class="cible-desc">Verhandeln, zusammenarbeiten und international verstehen.</div>
+          </div>
+          <div class="cible-block">
+            <div class="cible-icon">🎓</div>
+            <div class="cible-title">Studierende</div>
+            <div class="cible-desc">Lernen und kommunizieren in jeder Sprache.</div>
+          </div>
+          <div class="cible-block">
+            <div class="cible-icon">👵</div>
+            <div class="cible-title">Senioren</div>
+            <div class="cible-desc">Bleiben Sie einfach mit der Welt verbunden.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEWERTUNGEN -->
+    <section class="temoignages fade-in" id="bewertungen">
+      <div class="container">
+        <h2 class="section-title">Sie haben SmartingPen gewählt</h2>
+        <div class="temoignages__list">
+          <div class="temoignage">
+            <div class="temoignage__author">Sarah L.</div>
+            <div>„Ich habe SmartingPen auf meiner Japanreise benutzt, es ist beeindruckend!“</div>
+          </div>
+          <div class="temoignage">
+            <div class="temoignage__author">Marc D.</div>
+            <div>„Perfekt für meine internationalen Meetings. Einfach und effizient.“</div>
+          </div>
+          <div class="temoignage">
+            <div class="temoignage__author">Fatou S.</div>
+            <div>„Die Sprachübersetzung ist super schnell, ich empfehle es sehr.“</div>
+          </div>
+          <div class="temoignage">
+            <div class="temoignage__author">Lucien P.</div>
+            <div>„Meine Mutter nutzt es, um mit ihren ausländischen Nachbarn zu sprechen, sie liebt es!“</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq fade-in" id="faq">
+      <div class="container">
+        <h2 class="section-title">Häufige Fragen</h2>
+        <div class="faq__list">
+          <div class="faq__item">
+            <h3>Wird eine Internetverbindung benötigt?</h3>
+            <p>Nein, SmartingPen funktioniert überall, sogar offline.</p>
+          </div>
+          <div class="faq__item">
+            <h3>Wie viele Sprachen werden unterstützt?</h3>
+            <p>113 Sprachen, darunter Englisch, Spanisch, Chinesisch, Arabisch, Russisch usw.</p>
+          </div>
+          <div class="faq__item">
+            <h3>Wie lange hält der Akku?</h3>
+            <p>Bis zu 12 Stunden Dauerbetrieb, schnelles USB-C-Laden.</p>
+          </div>
+          <div class="faq__item">
+            <h3>Ist es einfach zu bedienen?</h3>
+            <p>Ja, die Benutzeroberfläche ist intuitiv und für alle zugänglich.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGB -->
+    <section class="cgv fade-in" id="cgv">
+      <div class="container">
+        <h2 class="section-title">Allgemeine Geschäftsbedingungen</h2>
+        <p>Lesen Sie unsere <a href="#">AGB</a> und <a href="#">Datenschutzrichtlinie</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer-icons">
+        <div class="footer-icon-block"><span>🔒</span><span class="footer-icon-label">Sichere Zahlung</span></div>
+        <div class="footer-icon-block"><span>🚚</span><span class="footer-icon-label">Sendungsverfolgung</span></div>
+        <div class="footer-icon-block"><span>📞</span><span class="footer-icon-label">Support 7/7</span></div>
+      </div>
+      <div>
+        <a href="#cgv" class="footer-link">AGB</a>·
+        <a href="#faq" class="footer-link">FAQ</a>·
+        <a href="#" class="footer-link">Kontakt</a>
+      </div>
+      <div class="footer-contact">&copy; 2025 SmartingPen. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+</body>
+</html> 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LexiGo – Le stylo qui traduit 113 langues instantanément</title>
+  <title>SmartingPen – Le stylo qui traduit 113 langues instantanément</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,14 +39,20 @@
 <body>
   <header class="header">
     <div class="container header__content">
-      <a href="#" class="logo-link"><img src="logo.png" alt="LexiGo logo" class="logo-img"></a>
+      <a href="#" class="logo-link"><img src="smartingpen.png" alt="SmartingPen logo" class="logo-img" style="height: 150px; max-width: 480px;"></a>
       <nav class="nav">
-        <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="#comment">Comment ça marche ?</a>
-        <a href="#cible">Pour qui ?</a>
-        <a href="#temoignages">Avis</a>
-        <a href="#faq">FAQ</a>
-        <a href="#commande" class="btn-header">Commander</a>
+        <a href="index.html#fonctionnalites">Fonctionnalités</a>
+        <a href="index.html#comment">Comment ça marche ?</a>
+        <a href="index.html#pourqui">Pour qui ?</a>
+        <a href="index.html#temoignages">Témoignages</a>
+        <a href="index.html#faq">FAQ</a>
+        <select id="lang-switcher" onchange="location = this.value;" style="margin-left:18px;padding:6px 18px;border-radius:18px;font-size:1rem;">
+          <option value="index.html" selected>Français</option>
+          <option value="index-en.html">English</option>
+          <option value="index-es.html">Español</option>
+          <option value="index-de.html">Deutsch</option>
+          <option value="index-it.html">Italiano</option>
+        </select>
       </nav>
     </div>
   </header>
@@ -55,20 +61,36 @@
     <!-- HERO -->
     <section class="hero fade-in">
       <div class="container hero__container">
-        <div class="hero__left">
-          <span class="hero__badge">Nouveau 2025</span>
-          <h1 class="hero__title">LexiGo <span class="highlight">– Le stylo qui traduit 113 langues</span> instantanément</h1>
-          <div class="hero__subtitle">Parlez, écrivez, comprenez le monde. Traduction vocale et écrite en temps réel, partout, sans connexion.</div>
-          <div class="hero__prices">
+        <div class="hero__left" style="display:flex;flex-direction:column;justify-content:flex-start;min-height:340px;position:relative;">
+          <span class="hero__badge hero__badge-large" style="position:absolute;top:-140px;left:0;">Nouveauté 2025</span>
+          <h1 class="hero__title" style="margin-top:-60px;">SmartingPen <span class="highlight">– Le stylo connecté à ChatGPT qui traduit 113 langues</span> instantanément</h1>
+          <div class="hero__subtitle" style="margin-top:-18px;">Parlez, écrivez, comprenez le monde. Traduction vocale et écrite en temps réel, partout, sans connexion.</div>
+          <div class="hero__prices" style="margin-top:-10px;">
             <span class="hero__old-price">129€</span>
-            <span class="hero__price">79€</span>
+            <span class="hero__price">89€</span>
+            <span class="hero__payment-logos" style="display:inline-flex;align-items:center;gap:8px;margin-left:10px;vertical-align:middle;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" style="height:24px;width:auto;display:inline-block;vertical-align:middle;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:1px 2px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height:24px;width:auto;display:inline-block;vertical-align:middle;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:1px 2px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:24px;width:auto;display:inline-block;vertical-align:middle;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:1px 2px;">
+            </span>
           </div>
           <div class="hero__timer" id="timer">Offre spéciale : 15m00s restantes !</div>
-          <a href="commande.html" class="btn-primary">Commander maintenant</a>
+          <a href="commande.html" class="btn-primary" style="display:block;margin:0 auto;text-align:center;">Commandez maintenant</a>
         </div>
         <div class="hero__right">
           <div class="hero__img-bg">
-            <img src="image1.png" alt="LexiGo pen" class="hero__img hero__img-large">
+            <img src="image1.png" alt="SmartingPen pen" class="hero__img hero__img-large">
+            <div class="product-features-box">
+              <ul class="product-features-list">
+                <li><span class="pf-icon">✅</span> Traduit instantanément <b>113 langues</b> (vocal + écrit)</li>
+                <li><span class="pf-icon">✅</span> Fonctionne <b>sans connexion Internet</b></li>
+                <li><span class="pf-icon">✅</span> <b>ChatGPT intégré</b> : scanne une question, il te répond</li>
+                <li><span class="pf-icon">✅</span> <b>Dictionnaire</b> + lecture audio</li>
+                <li><span class="pf-icon">✅</span> Enregistre la voix, les textes et les vidéos</li>
+                <li><span class="pf-icon">✅</span> <b>Tactile</b> avec interface simple à utiliser</li>
+                <li><span class="pf-icon">✅</span> Compact, discret et transportable partout</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -76,16 +98,11 @@
 
     <!-- SECTION FONCTIONNALITÉS (image + texte) -->
     <section class="illustration-section fade-in" id="fonctionnalites">
-      <div class="container illustration-row">
-        <img src="image2.png" alt="LexiGo fonctionnalités" class="illustration-img-large">
-        <div class="illustration-caption-box">
-          <div class="illustration-caption">
-            <strong>Traduction instantanée</strong> de la voix et du texte<br>
-            <strong>113 langues</strong> supportées<br>
-            <strong>Écran tactile</strong> couleur<br>
-            <strong>Reconnaissance vocale IA</strong> ultra-précise<br>
-            <strong>Autonomie 12h</strong> – Recharge USB-C<br>
-            <strong>Compact</strong> & léger (poche, sac, voyage)
+      <div class="container features-row">
+        <img src="image2.png" alt="SmartingPen fonctionnalités" class="illustration-img-large features-img">
+        <div class="features-block">
+          <div class="features-headline" style="font-size:1.18rem;color:#1a2233;text-align:center;line-height:1.7;margin-bottom:28px;font-weight:500;">
+            SmartingPen est bien plus qu'un simple traducteur. Grâce à l'intelligence de ChatGPT embarquée, il vous permet de communiquer sans limites, de comprendre instantanément 113 langues, et d'interagir avec le monde entier, où que vous soyez. Profitez d'une expérience fluide, intuitive et mobile pour explorer, apprendre et échanger, même sans connexion internet.
           </div>
         </div>
       </div>
@@ -95,29 +112,29 @@
     <section class="how-section fade-in" id="comment">
       <div class="container">
         <h2 class="section-title">Comment ça marche ?</h2>
-        <div class="how__steps">
-          <div class="how__step">
-            <div class="how__icon">🎤</div>
-            <div class="how__text">Parlez ou scannez un texte</div>
-          </div>
-          <div class="how__step">
-            <div class="how__icon">🌐</div>
-            <div class="how__text">LexiGo détecte la langue automatiquement</div>
-          </div>
-          <div class="how__step">
-            <div class="how__icon">💬</div>
-            <div class="how__text">Traduction instantanée à l'écran et à l'oral</div>
-          </div>
+        <div class="how-pictos-list">
+          <div class="how-picto-item"><span class="how-picto-icon">🌐</span> <span class="how-picto-text">Traduit instantanément <b>113 langues</b> (vocal + écrit)</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">📶</span> <span class="how-picto-text">Fonctionne <b>sans connexion Internet</b></span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🤖</span> <span class="how-picto-text"><b>ChatGPT intégré</b> : scanne une question, il te répond</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🎤</span> <span class="how-picto-text">Enregistre la voix, les textes et les vidéos</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">👆</span> <span class="how-picto-text"><b>Tactile</b> avec interface simple à utiliser</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🧳</span> <span class="how-picto-text">Compact, discret et transportable partout</span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">📚</span> <span class="how-picto-text"><b>Dictionnaire</b></span></div>
+          <div class="how-picto-item"><span class="how-picto-icon">🎵</span> <span class="how-picto-text"><b>Lecteur MP3</b></span></div>
         </div>
       </div>
     </section>
 
     <!-- SECTION ILLUSTRATION (produit en action) -->
     <section class="illustration-section fade-in">
-      <div class="container illustration-row">
-        <img src="image4.png" alt="LexiGo en action" class="illustration-img">
-        <div class="illustration-caption-box pro">
-          <div class="illustration-caption">Utilisez LexiGo lors de vos voyages, réunions, études ou conversations internationales. Un outil indispensable pour comprendre et se faire comprendre partout !</div>
+      <div class="container features-row">
+        <img src="image4.png" alt="SmartingPen en action" class="features-img">
+        <div class="features-block" style="max-width:540px;">
+          <div class="features-headline" style="font-size:1.18rem;color:#1a2233;text-align:center;line-height:1.7;margin-bottom:28px;font-weight:500;">
+            <span style="font-size:1.6em;vertical-align:middle;">🌍</span><br>
+            Utilisez SmartingPen lors de vos voyages, réunions, études ou conversations internationales.<br>
+            <b>Un outil indispensable pour comprendre et se faire comprendre partout !</b>
+          </div>
         </div>
       </div>
     </section>
@@ -125,7 +142,7 @@
     <!-- SECTION À QUI S'ADRESSE LEXIGO ? (pictos) -->
     <section class="cible-section fade-in" id="cible">
       <div class="container">
-        <h2 class="section-title">À qui s'adresse LexiGo ?</h2>
+        <h2 class="section-title">À qui s'adresse SmartingPen ?</h2>
         <div class="cible__list">
           <div class="cible-block">
             <div class="cible-icon">✈️</div>
@@ -154,11 +171,11 @@
     <!-- SECTION TEMOIGNAGES -->
     <section class="temoignages fade-in" id="temoignages">
       <div class="container">
-        <h2 class="section-title">Ils ont adopté LexiGo</h2>
+        <h2 class="section-title">Ils ont adopté SmartingPen</h2>
         <div class="temoignages__list">
           <div class="temoignage">
             <div class="temoignage__author">Sarah L.</div>
-            <div>« J'ai utilisé LexiGo lors de mon voyage au Japon, c'est bluffant ! »</div>
+            <div>« J'ai utilisé SmartingPen lors de mon voyage au Japon, c'est bluffant ! »</div>
           </div>
           <div class="temoignage">
             <div class="temoignage__author">Marc D.</div>
@@ -183,7 +200,7 @@
         <div class="faq__list">
           <div class="faq__item">
             <h3>Faut-il une connexion internet ?</h3>
-            <p>Non, LexiGo fonctionne partout, même hors ligne.</p>
+            <p>Non, SmartingPen fonctionne partout, même hors ligne.</p>
           </div>
           <div class="faq__item">
             <h3>Combien de langues sont supportées ?</h3>
@@ -208,41 +225,6 @@
         <p>Consultez nos <a href="#">CGV</a> et <a href="#">politique de confidentialité</a>.</p>
       </div>
     </section>
-
-    <!-- SECTION COMMANDE (ancre) -->
-    <section class="commande-section fade-in" id="commande">
-      <div class="container commande__form-block">
-        <div class="commande-title">Commander LexiGo</div>
-        <form class="commande-form" action="commande.html" method="get">
-          <div class="form-group">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="address">Adresse de livraison</label>
-            <input type="text" id="address" name="address" required>
-          </div>
-          <div class="form-group">
-            <label for="quantity">Quantité</label>
-            <select id="quantity" name="quantity">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
-          <div class="commande__img-block" style="margin-bottom:18px;display:flex;justify-content:center;">
-            <img src="image1.png" alt="LexiGo à commander" class="commande__img" style="max-width:120px;border-radius:12px;box-shadow:0 4px 24px rgba(0,119,255,0.10);background:#fff;">
-          </div>
-          <button type="submit" class="commande-btn">Commander</button>
-        </form>
-        <a href="#" class="btn-retour">Retour à l'accueil</a>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -257,7 +239,7 @@
         <a href="#faq" class="footer-link">FAQ</a>·
         <a href="#" class="footer-link">Contact</a>
       </div>
-      <div class="footer-contact">&copy; 2024 LexiGo. Tous droits réservés.</div>
+      <div class="footer-contact">&copy; 2025 SmartingPen. Tous droits réservés.</div>
     </div>
   </footer>
 </body>
