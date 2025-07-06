@@ -47,7 +47,8 @@
           <div style="font-size:1.08rem;color:#009900;font-weight:600;margin-bottom:10px;">Envío gratis en 5-7 días</div>
           <label for="quantity">Cantidad:</label>
           <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-          <a href="https://buy.stripe.com/5kQfZgcoi0uS4Dph1f4800m" class="checkout-btn" style="display:block;text-align:center;text-decoration:none;margin-bottom:18px;" target="_blank" rel="noopener">Pagar ahora con tarjeta o Apple Pay</a>
+          <div id="total-price" style="font-size:1.2rem;font-weight:600;margin:10px 0;">Total: 89€</div>
+          <button id="checkout-btn" class="checkout-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-bottom:18px;width:100%;max-width:320px;">Pagar ahora con tarjeta o Apple Pay</button>
           <div class="checkout-payment-desc">Pago 100% seguro. Tus datos están protegidos.</div>
           <div class="checkout-payment-logos" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;margin-top:2px;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
@@ -102,6 +103,28 @@
         });
       });
     });
+
+    const unitPrice = 89;
+    const quantityInput = document.getElementById('quantity');
+    const totalPriceDiv = document.getElementById('total-price');
+    quantityInput.addEventListener('input', function() {
+      const qty = parseInt(quantityInput.value) || 1;
+      totalPriceDiv.textContent = `Total: ${qty * unitPrice}€`;
+    });
+    document.getElementById('checkout-btn').onclick = async function () {
+      const qty = parseInt(quantityInput.value) || 1;
+      const res = await fetch('/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity: qty })
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location = data.url;
+      } else {
+        alert('Error al crear la sesión de Stripe.');
+      }
+    };
   </script>
 </body>
 </html> 
