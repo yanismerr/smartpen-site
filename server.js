@@ -3,7 +3,7 @@ const Stripe = require('stripe');
 const cors = require('cors');
 
 const app = express();
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Mets ta clé Stripe ici ou dans les variables d'environnement
 
 app.use(cors());
 app.use(express.json());
@@ -22,34 +22,20 @@ app.post('/create-checkout-session', async (req, res) => {
             product_data: {
               name: 'SmartingPen',
             },
-            unit_amount: 8900, // 89€ TTC
+            unit_amount: 8900, // 89 € TTC
           },
           quantity: 1,
         },
       ],
-      billing_address_collection: 'required', // nom + prénom + adresse
+      billing_address_collection: 'required',
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
       phone_number_collection: {
-        enabled: true, // numéro de téléphone
+        enabled: true,
       },
       customer_email: email || undefined,
       customer_creation: 'always',
-      custom_fields: [
-        {
-          key: 'ville',
-          label: { type: 'custom', custom: 'Ville' },
-          type: 'text',
-          required: true,
-        },
-        {
-          key: 'code_postal',
-          label: { type: 'custom', custom: 'Code postal' },
-          type: 'text',
-          required: true,
-        }
-      ],
       success_url: 'https://smartpen-site-1cm9.vercel.app/success',
       cancel_url: 'https://smartpen-site-1cm9.vercel.app/cancel',
     });
