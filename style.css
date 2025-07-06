@@ -927,7 +927,7 @@ body, html {
 
   /* Header responsive avec burger menu */
   .header {
-    padding: 12px 0;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -938,38 +938,42 @@ body, html {
   }
 
   body {
-    padding-top: 80px; /* Compense le header fixe */
+    padding-top: 60px; /* Réduit pour compenser le header plus petit */
   }
 
   .header__content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 10px;
-    padding: 0 15px;
+    position: relative;
+    padding: 0;
+    height: 40px;
   }
 
   /* Menu burger à gauche */
   .menu-toggle {
     display: block;
-    order: -1;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     flex-shrink: 0;
-    margin-right: 5px;
+    padding: 8px;
   }
 
-  /* Logo responsive */
+  /* Logo responsive centré */
   .logo-link {
-    flex: 0 0 auto;
-    max-width: calc(100% - 50px);
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .logo-img {
-    height: 60px !important;
+    height: 40px !important;
     width: auto !important;
-    max-width: 100% !important;
+    max-width: 200px !important;
     object-fit: contain;
   }
 
@@ -977,7 +981,7 @@ body, html {
   .nav {
     display: none;
     position: fixed;
-    top: 80px;
+    top: 60px;
     left: 0;
     right: 0;
     background: #fff;
@@ -986,7 +990,7 @@ body, html {
     padding: 15px;
     gap: 10px;
     z-index: 999;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 60px);
     overflow-y: auto;
   }
 
@@ -1017,7 +1021,8 @@ body, html {
 
   /* Hero section responsive */
   .hero-section {
-    padding: 30px 0;
+    padding: 20px 0 30px 0;
+    margin-top: 10px;
   }
 
   .hero__content {
@@ -1278,6 +1283,18 @@ body, html {
   }
   
   .logo-img {
-    height: 50px !important;
+    height: 35px !important;
+  }
+  
+  .header__content {
+    height: 35px;
+  }
+  
+  body {
+    padding-top: 55px;
+  }
+  
+  .nav {
+    top: 55px;
   }
 } 
