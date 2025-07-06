@@ -30,7 +30,12 @@
   <header class="header">
     <div class="container header__content">
       <a href="#" class="logo-link"><img src="smartingpen.png" alt="Logo SmartingPen" class="logo-img" style="height: 150px; max-width: 480px;"></a>
-      <nav class="nav">
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="navMenu">
         <a href="index-es.html#caracteristicas">Características</a>
         <a href="index-es.html#como">¿Cómo funciona?</a>
         <a href="index-es.html#paraquien">¿Para quién?</a>
@@ -237,5 +242,28 @@
       <div class="footer-contact">&copy; 2025 SmartingPen. Todos los derechos reservados.</div>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+      
+      // Menu burger toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // Fermer le menu quand on clique sur un lien
+      document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html> 
