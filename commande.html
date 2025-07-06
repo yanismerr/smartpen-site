@@ -33,7 +33,6 @@
       </nav>
     </div>
   </header>
-
   <main>
     <section class="checkout-section fade-in">
       <div class="container checkout__form-block">
@@ -64,7 +63,6 @@
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="container footer__content">
       <div class="footer-icons">
@@ -80,20 +78,17 @@
       <div class="footer-contact">&copy; 2025 SmartingPen. Tous droits réservés.</div>
     </div>
   </footer>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-      
+
       // Menu burger toggle
       const menuToggle = document.getElementById('menuToggle');
       const navMenu = document.getElementById('navMenu');
-      
       menuToggle.addEventListener('click', function() {
         this.classList.toggle('active');
         navMenu.classList.toggle('active');
       });
-      
       // Fermer le menu quand on clique sur un lien
       document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
@@ -101,29 +96,32 @@
           navMenu.classList.remove('active');
         });
       });
-    });
 
-    const unitPrice = 89;
-    const quantityInput = document.getElementById('quantity');
-    const totalPriceDiv = document.getElementById('total-price');
-    quantityInput.addEventListener('input', function() {
-      const qty = parseInt(quantityInput.value) || 1;
-      totalPriceDiv.textContent = `Total : ${qty * unitPrice}€`;
-    });
-    document.getElementById('checkout-btn').onclick = async function () {
-      const qty = parseInt(document.getElementById('quantity').value) || 1;
-      const res = await fetch('/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity: qty })
+      // GESTION DU PRIX ET QUANTITÉ
+      const unitPrice = 89;
+      const quantityInput = document.getElementById('quantity');
+      const totalPriceDiv = document.getElementById('total-price');
+      quantityInput.addEventListener('input', function() {
+        const qty = parseInt(quantityInput.value) || 1;
+        totalPriceDiv.textContent = ⁠ Total : ${qty * unitPrice}€ ⁠;
       });
-      const data = await res.json();
-      if (data.url) {
-        window.location = data.url;
-      } else {
-        alert('Erreur lors de la création de la session Stripe.');
-      }
-    };
+
+      // Gestion du paiement Stripe (quantité transmise)
+      document.getElementById('checkout-btn').onclick = async function () {
+        const qty = parseInt(document.getElementById('quantity').value) || 1;
+        const res = await fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ quantity: qty })
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location = data.url;
+        } else {
+          alert('Erreur lors de la création de la session Stripe.');
+        }
+      };
+    });
   </script>
 </body>
-</html> 
+</html>
