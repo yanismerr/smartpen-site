@@ -111,7 +111,7 @@
       totalPriceDiv.textContent = `Total : ${qty * unitPrice}€`;
     });
     document.getElementById('checkout-btn').onclick = async function () {
-      const qty = parseInt(quantityInput.value) || 1;
+      const qty = parseInt(document.getElementById('quantity').value) || 1;
       const res = await fetch('/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
