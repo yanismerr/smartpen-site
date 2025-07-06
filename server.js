@@ -11,6 +11,7 @@ app.use(express.json());
 app.post('/create-checkout-session', async (req, res) => {
   try {
     const { email } = req.body;
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       mode: 'payment',
@@ -26,26 +27,33 @@ app.post('/create-checkout-session', async (req, res) => {
           quantity: 1,
         },
       ],
-      billing_address_collection: 'required',
+      billing_address_collection: 'required', // nom + prénom + adresse
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
       phone_number_collection: {
-        enabled: true,
+        enabled: true, // numéro de téléphone
       },
       customer_email: email || undefined,
       customer_creation: 'always',
       custom_fields: [
         {
-          key: 'full_name',
-          label: { type: 'custom', custom: 'Nom complet' },
+          key: 'ville',
+          label: { type: 'custom', custom: 'Ville' },
           type: 'text',
           required: true,
         },
+        {
+          key: 'code_postal',
+          label: { type: 'custom', custom: 'Code postal' },
+          type: 'text',
+          required: true,
+        }
       ],
       success_url: 'https://smartpen-site-1cm9.vercel.app/success',
       cancel_url: 'https://smartpen-site-1cm9.vercel.app/cancel',
     });
+
     res.json({ url: session.url });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -55,4 +63,4 @@ app.post('/create-checkout-session', async (req, res) => {
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-}); 
+});
