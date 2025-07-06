@@ -3,73 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paiement SmartingPen</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Commander SmartingPen</title>
+  <style>
+    body { font-family: Inter, Arial, sans-serif; background: #f7fbff; display: flex; align-items: center; justify-content: center; height: 100vh; }
+    .btn { background: #0077ff; color: #fff; border: none; border-radius: 24px; padding: 18px 36px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .btn:hover { background: #005fcc; }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container header__content">
-      <div class="logo">SmartingPen <span class="logo-emoji">🌍</span></div>
-      <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="commande.html">Commande</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="checkout-section fade-in visible">
-      <div class="container checkout__container">
-        <div class="checkout__form-block">
-          <h1 class="checkout-title">Finalisez votre commande</h1>
-          <form class="checkout-form" autocomplete="on">
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
-            </div>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" required placeholder="Votre nom">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="votre@email.com">
-            </div>
-            <div class="form-group">
-              <label for="adresse">Adresse</label>
-              <textarea id="adresse" name="adresse" required placeholder="Votre adresse complète"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="livraison">Mode de livraison</label>
-              <select id="livraison" name="livraison" required>
-                <option value="standard">Standard (3-5 jours) - Offert</option>
-                <option value="express">Express (24-48h) +4,90€</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="paiement">Mode de paiement</label>
-              <select id="paiement" name="paiement" required>
-                <option value="carte">Carte bancaire</option>
-                <option value="applepay">Apple Pay</option>
-                <option value="googlepay">Google Pay</option>
-              </select>
-            </div>
-            <button type="submit" class="btn-primary checkout-btn">Payer maintenant par carte ou Apple Pay</button>
-            <div class="checkout-payment-desc">Paiement sécurisé par carte, Apple Pay ou Google Pay</div>
-          </form>
-          <a href="commande.html" class="btn-retour">&larr; Retour à la commande</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__content">
-      <span>&copy; 2024 SmartingPen. Tous droits réservés.</span>
-      <a href="index.html#cgv">CGV</a>
-      <a href="mailto:contact@smartingpen.com">Contact</a>
-    </div>
-  </footer>
+  <button class="btn" id="checkout-btn">Commander maintenant</button>
+  <script>
+    document.getElementById('checkout-btn').onclick = async function() {
+      const res = await fetch('/create-checkout-session', { method: 'POST' });
+      const data = await res.json();
+      if (data.url) {
+        window.location = data.url;
+      } else {
+        alert('Erreur lors de la création de la session Stripe.');
+      }
+    };
+  </script>
 </body>
 </html> 
