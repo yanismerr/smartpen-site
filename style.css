@@ -460,9 +460,9 @@ body, html {
 }
 
 /* ====== FORMULAIRES ====== */
-.commande-section, .checkout-section {
+.checkout-section, .commande-section {
   background: #fff;
-  padding: 48px 0 32px 0;
+  padding: 80px 0 32px 0;
   min-height: 80vh;
 }
 .commande__form-block, .checkout__form-block {
@@ -1407,15 +1407,12 @@ body, html {
 }
 
 @media (max-width: 600px) {
-  /* Agrandir l'image du produit sur mobile dans les pages de commande */
-  .checkout-section img[src="image1.png"],
-  .commande__img,
-  .commande__img-block img[src="image1.png"] {
+  .commande__img {
     max-width: 95vw !important;
     width: 95vw !important;
     min-width: 0 !important;
     height: auto !important;
-    display: block;
+    display: block !important;
     margin: 0 auto 18px auto !important;
     border-radius: 18px !important;
     box-shadow: 0 4px 24px rgba(0,119,255,0.10) !important;
