@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LexiGo – Le stylo qui traduit 113 langues instantanément</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer>
+    // Animation fade-in
+    document.addEventListener('DOMContentLoaded', function() {
+      const fadeEls = document.querySelectorAll('.fade-in');
+      const onScroll = () => {
+        fadeEls.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 60) el.classList.add('visible');
+        });
+      };
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    });
+    // Timer
+    document.addEventListener('DOMContentLoaded', function() {
+      const timer = document.getElementById('timer');
+      if (!timer) return;
+      let t = 15 * 60; // 15 min
+      function update() {
+        const m = Math.floor(t / 60);
+        const s = t % 60;
+        timer.textContent = `Offre spéciale : ${m}m${s.toString().padStart(2,'0')}s restantes !`;
+        if (t > 0) { t--; setTimeout(update, 1000); }
+      }
+      update();
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <a href="#" class="logo-link"><img src="logo.png" alt="LexiGo logo" class="logo-img"></a>
+      <nav class="nav">
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#comment">Comment ça marche ?</a>
+        <a href="#cible">Pour qui ?</a>
+        <a href="#temoignages">Avis</a>
+        <a href="#faq">FAQ</a>
+        <a href="#commande" class="btn-header">Commander</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="container hero__container">
+        <div class="hero__left">
+          <span class="hero__badge">Nouveau 2025</span>
+          <h1 class="hero__title">LexiGo <span class="highlight">– Le stylo qui traduit 113 langues</span> instantanément</h1>
+          <div class="hero__subtitle">Parlez, écrivez, comprenez le monde. Traduction vocale et écrite en temps réel, partout, sans connexion.</div>
+          <div class="hero__prices">
+            <span class="hero__old-price">129€</span>
+            <span class="hero__price">79€</span>
+          </div>
+          <div class="hero__timer" id="timer">Offre spéciale : 15m00s restantes !</div>
+          <a href="commande.html" class="btn-primary">Commander maintenant</a>
+        </div>
+        <div class="hero__right">
+          <div class="hero__img-bg">
+            <img src="image1.png" alt="LexiGo pen" class="hero__img hero__img-large">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION FONCTIONNALITÉS (image + texte) -->
+    <section class="illustration-section fade-in" id="fonctionnalites">
+      <div class="container illustration-row">
+        <img src="image2.png" alt="LexiGo fonctionnalités" class="illustration-img-large">
+        <div class="illustration-caption-box">
+          <div class="illustration-caption">
+            <strong>Traduction instantanée</strong> de la voix et du texte<br>
+            <strong>113 langues</strong> supportées<br>
+            <strong>Écran tactile</strong> couleur<br>
+            <strong>Reconnaissance vocale IA</strong> ultra-précise<br>
+            <strong>Autonomie 12h</strong> – Recharge USB-C<br>
+            <strong>Compact</strong> & léger (poche, sac, voyage)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION COMMENT CA MARCHE (pictos) -->
+    <section class="how-section fade-in" id="comment">
+      <div class="container">
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <div class="how__steps">
+          <div class="how__step">
+            <div class="how__icon">🎤</div>
+            <div class="how__text">Parlez ou scannez un texte</div>
+          </div>
+          <div class="how__step">
+            <div class="how__icon">🌐</div>
+            <div class="how__text">LexiGo détecte la langue automatiquement</div>
+          </div>
+          <div class="how__step">
+            <div class="how__icon">💬</div>
+            <div class="how__text">Traduction instantanée à l'écran et à l'oral</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION ILLUSTRATION (produit en action) -->
+    <section class="illustration-section fade-in">
+      <div class="container illustration-row">
+        <img src="image4.png" alt="LexiGo en action" class="illustration-img">
+        <div class="illustration-caption-box pro">
+          <div class="illustration-caption">Utilisez LexiGo lors de vos voyages, réunions, études ou conversations internationales. Un outil indispensable pour comprendre et se faire comprendre partout !</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION À QUI S'ADRESSE LEXIGO ? (pictos) -->
+    <section class="cible-section fade-in" id="cible">
+      <div class="container">
+        <h2 class="section-title">À qui s'adresse LexiGo ?</h2>
+        <div class="cible__list">
+          <div class="cible-block">
+            <div class="cible-icon">✈️</div>
+            <div class="cible-title">Voyageurs</div>
+            <div class="cible-desc">Pour explorer le monde sans barrière linguistique.</div>
+          </div>
+          <div class="cible-block">
+            <div class="cible-icon">👩‍💼</div>
+            <div class="cible-title">Professionnels</div>
+            <div class="cible-desc">Pour négocier, collaborer et comprendre à l'international.</div>
+          </div>
+          <div class="cible-block">
+            <div class="cible-icon">🎓</div>
+            <div class="cible-title">Étudiants</div>
+            <div class="cible-desc">Pour apprendre et communiquer dans toutes les langues.</div>
+          </div>
+          <div class="cible-block">
+            <div class="cible-icon">👵</div>
+            <div class="cible-title">Seniors</div>
+            <div class="cible-desc">Pour garder le lien avec le monde, simplement.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION TEMOIGNAGES -->
+    <section class="temoignages fade-in" id="temoignages">
+      <div class="container">
+        <h2 class="section-title">Ils ont adopté LexiGo</h2>
+        <div class="temoignages__list">
+          <div class="temoignage">
+            <div class="temoignage__author">Sarah L.</div>
+            <div>« J'ai utilisé LexiGo lors de mon voyage au Japon, c'est bluffant ! »</div>
+          </div>
+          <div class="temoignage">
+            <div class="temoignage__author">Marc D.</div>
+            <div>« Idéal pour mes réunions internationales. Simple et efficace. »</div>
+          </div>
+          <div class="temoignage">
+            <div class="temoignage__author">Fatou S.</div>
+            <div>« La traduction vocale est ultra rapide, je recommande à 100%. »</div>
+          </div>
+          <div class="temoignage">
+            <div class="temoignage__author">Lucien P.</div>
+            <div>« Ma mère s'en sert pour parler avec ses voisins étrangers, elle adore ! »</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION FAQ -->
+    <section class="faq fade-in" id="faq">
+      <div class="container">
+        <h2 class="section-title">Questions fréquentes</h2>
+        <div class="faq__list">
+          <div class="faq__item">
+            <h3>Faut-il une connexion internet ?</h3>
+            <p>Non, LexiGo fonctionne partout, même hors ligne.</p>
+          </div>
+          <div class="faq__item">
+            <h3>Combien de langues sont supportées ?</h3>
+            <p>113 langues, dont anglais, espagnol, chinois, arabe, russe, etc.</p>
+          </div>
+          <div class="faq__item">
+            <h3>Quelle est l'autonomie ?</h3>
+            <p>Jusqu'à 12h d'utilisation continue, recharge rapide USB-C.</p>
+          </div>
+          <div class="faq__item">
+            <h3>Est-ce facile à utiliser ?</h3>
+            <p>Oui, l'interface est intuitive et accessible à tous.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CGV -->
+    <section class="cgv fade-in" id="cgv">
+      <div class="container">
+        <h2 class="section-title">Conditions Générales de Vente</h2>
+        <p>Consultez nos <a href="#">CGV</a> et <a href="#">politique de confidentialité</a>.</p>
+      </div>
+    </section>
+
+    <!-- SECTION COMMANDE (ancre) -->
+    <section class="commande-section fade-in" id="commande">
+      <div class="container commande__form-block">
+        <div class="commande-title">Commander LexiGo</div>
+        <form class="commande-form" action="commande.html" method="get">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Adresse de livraison</label>
+            <input type="text" id="address" name="address" required>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantité</label>
+            <select id="quantity" name="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="commande__img-block" style="margin-bottom:18px;display:flex;justify-content:center;">
+            <img src="image1.png" alt="LexiGo à commander" class="commande__img" style="max-width:120px;border-radius:12px;box-shadow:0 4px 24px rgba(0,119,255,0.10);background:#fff;">
+          </div>
+          <button type="submit" class="commande-btn">Commander</button>
+        </form>
+        <a href="#" class="btn-retour">Retour à l'accueil</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer-icons">
+        <div class="footer-icon-block"><span>🔒</span><span class="footer-icon-label">Paiement sécurisé</span></div>
+        <div class="footer-icon-block"><span>🚚</span><span class="footer-icon-label">Livraison suivie</span></div>
+        <div class="footer-icon-block"><span>📞</span><span class="footer-icon-label">Support 7j/7</span></div>
+      </div>
+      <div>
+        <a href="#cgv" class="footer-link">CGV</a>·
+        <a href="#faq" class="footer-link">FAQ</a>·
+        <a href="#" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-contact">&copy; 2024 LexiGo. Tous droits réservés.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commander LexiGo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <a href="index.html" class="logo-link"><img src="logo.png" alt="LexiGo logo" class="logo-img"></a>
+      <nav class="nav">
+        <a href="index.html#fonctionnalites">Fonctionnalités</a>
+        <a href="index.html#comment">Comment ça marche ?</a>
+        <a href="index.html#cible">Pour qui ?</a>
+        <a href="index.html#temoignages">Avis</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="#" class="btn-header">Commander</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="checkout-section fade-in">
+      <div class="container checkout__form-block">
+        <div id="step1">
+          <div class="checkout-title"><span class="hero__badge">Nouveau 2025</span> Votre commande LexiGo</div>
+          <div class="commande__img-block" style="margin-bottom:18px;display:flex;justify-content:center;">
+            <img src="image1.png" alt="LexiGo à commander" class="commande__img" style="max-width:140px;border-radius:16px;box-shadow:0 4px 24px rgba(0,119,255,0.10);background:#fff;">
+          </div>
+          <div class="commande-desc" style="text-align:center;font-size:1.08rem;color:#222;margin-bottom:16px;">LexiGo – Le stylo qui traduit 113 langues instantanément</div>
+          <div class="commande__prix" style="font-size:1.4rem;color:#0077ff;font-weight:700;margin-bottom:18px;">79€ <span class="commande__prix-ttc" style="font-size:1rem;color:#888;font-weight:500;margin-left:4px;">TTC</span></div>
+          <a href="https://buy.stripe.com/5kQfZgcoi0uS4Dph1f4800m" class="checkout-btn" style="display:block;text-align:center;text-decoration:none;margin-bottom:18px;" target="_blank" rel="noopener">Payer maintenant par carte ou Apple Pay</a>
+          <div class="checkout-payment-desc">Paiement 100% sécurisé. Vos données sont protégées.</div>
+          <div class="checkout-payment-logos" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;margin-top:2px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Pay" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
+          </div>
+        </div>
+        <div id="confirmation" style="display:none;text-align:center;padding:32px 0 0 0;">
+          <div style="font-size:1.2rem;color:#0077ff;font-weight:600;margin-bottom:12px;">Merci pour votre commande !</div>
+          <div style="color:#222;">Nous avons bien reçu vos informations.<br>Vous recevrez un email de confirmation sous peu.</div>
+          <a href="index.html" class="btn-retour" style="margin-top:18px;display:inline-block;">Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer-icons">
+        <div class="footer-icon-block"><span>🔒</span><span class="footer-icon-label">Paiement sécurisé</span></div>
+        <div class="footer-icon-block"><span>🚚</span><span class="footer-icon-label">Livraison suivie</span></div>
+        <div class="footer-icon-block"><span>📞</span><span class="footer-icon-label">Support 7j/7</span></div>
+      </div>
+      <div>
+        <a href="index.html#cgv" class="footer-link">CGV</a>·
+        <a href="index.html#faq" class="footer-link">FAQ</a>·
+        <a href="#" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-contact">&copy; 2024 LexiGo. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Correction fade-in : affiche tout dès le chargement
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    });
+  </script>
+</body>
+</html> 
