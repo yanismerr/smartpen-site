@@ -815,9 +815,9 @@ body, html {
     text-align: left;
   }
   .logo-img {
-    height: 60px !important;
+    height: 50px !important;
     width: auto !important;
-    max-width: 100% !important;
+    max-width: 180px !important;
     object-fit: contain;
   }
   .hero-section, .main-section, .checkout-section {
@@ -927,7 +927,7 @@ body, html {
 
   /* Header responsive avec burger menu */
   .header {
-    padding: 10px 0;
+    padding: 12px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -938,7 +938,7 @@ body, html {
   }
 
   body {
-    padding-top: 60px; /* Réduit pour compenser le header plus petit */
+    padding-top: 75px; /* Ajusté pour le header plus grand */
   }
 
   .header__content {
@@ -948,7 +948,7 @@ body, html {
     flex-wrap: nowrap;
     position: relative;
     padding: 0;
-    height: 40px;
+    height: 50px;
   }
 
   /* Menu burger à gauche */
@@ -971,9 +971,9 @@ body, html {
   }
 
   .logo-img {
-    height: 40px !important;
+    height: 50px !important;
     width: auto !important;
-    max-width: 200px !important;
+    max-width: 180px !important;
     object-fit: contain;
   }
 
@@ -981,7 +981,7 @@ body, html {
   .nav {
     display: none;
     position: fixed;
-    top: 60px;
+    top: 75px;
     left: 0;
     right: 0;
     background: #fff;
@@ -990,7 +990,7 @@ body, html {
     padding: 15px;
     gap: 10px;
     z-index: 999;
-    max-height: calc(100vh - 60px);
+    max-height: calc(100vh - 75px);
     overflow-y: auto;
   }
 
@@ -1283,18 +1283,19 @@ body, html {
   }
   
   .logo-img {
-    height: 35px !important;
+    height: 45px !important;
+    max-width: 160px !important;
   }
   
   .header__content {
-    height: 35px;
+    height: 45px;
   }
   
   body {
-    padding-top: 55px;
+    padding-top: 70px;
   }
   
   .nav {
-    top: 55px;
+    top: 70px;
   }
 } 
