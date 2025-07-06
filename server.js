@@ -10,7 +10,8 @@ app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
   try {
-    const { email } = req.body;
+    const { email, quantity } = req.body;
+    const qty = parseInt(quantity) > 0 ? parseInt(quantity) : 1;
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -24,7 +25,7 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             unit_amount: 8900, // 89 € TTC
           },
-          quantity: 1,
+          quantity: qty,
         },
       ],
       billing_address_collection: 'required',
