@@ -1418,4 +1418,8 @@ body, html {
     box-shadow: 0 4px 24px rgba(0,119,255,0.10) !important;
     background: #fff !important;
   }
+  .logo-img {
+    height: 80px !important;
+    max-width: 220px !important;
+  }
 } 
