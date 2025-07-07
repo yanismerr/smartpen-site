@@ -43,10 +43,10 @@
             <img src="image1.png" alt="SmartingPen to order" class="commande__img">
           </div>
           <div class="commande-desc" style="text-align:center;font-size:1.08rem;color:#222;margin-bottom:16px;">SmartingPen – The pen with ChatGPT that translates 113 languages instantly</div>
-          <div class="commande__prix" style="font-size:1.4rem;color:#0077ff;font-weight:700;margin-bottom:18px;">79€ <span class="commande__prix-ttc" style="font-size:1rem;color:#888;font-weight:500;margin-left:4px;">VAT incl.</span></div>
-          <div style="font-size:1.08rem;color:#009900;font-weight:600;margin-bottom:10px;">Free shipping in 5-7 days</div>
-          <button id="checkout-btn" class="checkout-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-bottom:18px;width:100%;max-width:320px;">Pay now by card or Apple Pay</button>
-          <div class="checkout-payment-desc">100% secure payment. Your data is protected.</div>
+          <div style="font-size:1.08rem;color:#009900;font-weight:600;margin-bottom:10px;">Livraison gratuite en 5 à 7 jours</div>
+          <div style="font-size:1.4rem;color:#0077ff;font-weight:700;margin-bottom:18px;">89€ <span style="font-size:1rem;color:#888;font-weight:500;margin-left:4px;">TTC</span></div>
+          <button id="checkout-btn" class="checkout-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-bottom:18px;width:100%;max-width:320px;">Payer maintenant par carte ou Apple Pay</button>
+          <div style="font-size:1rem;color:#444;font-weight:500;margin-bottom:16px;">Paiement 100% sécurisé. Vos données sont protégées.</div>
           <div class="checkout-payment-logos" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;margin-top:2px;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="payment-logo" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
@@ -111,7 +111,7 @@
         if (data.url) {
           window.location = data.url;
         } else {
-          alert('Error creating Stripe session.');
+          alert('Erreur lors de la création de la session Stripe.');
         }
       };
     });
