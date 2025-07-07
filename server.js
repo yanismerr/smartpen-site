@@ -25,7 +25,7 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             unit_amount: 8900, // 89 € TTC
           },
-          quantity: qty,
+          quantity: 1,
         },
       ],
       billing_address_collection: 'required',

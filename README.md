@@ -1,6 +1,6 @@
 # SmartingPen Stripe Checkout Backend
 
-Ce projet fournit un backend Node.js/Express pour déclencher une session Stripe Checkout complète pour le produit SmartingPen (89€ TTC), avec collecte obligatoire du nom, prénom, email, adresse, téléphone, etc.
+Ce projet fournit un backend Node.js/Express pour déclencher une session Stripe Checkout complète pour le produit SmartingPen (89€ TTC), avec collecte obligatoire du nom, prénom, email, adresse, téléphone.
 
 ## Fonctionnalités
 - Prix : 89€ TTC
@@ -9,6 +9,7 @@ Ce projet fournit un backend Node.js/Express pour déclencher une session Stripe
 - Limité à la France pour la livraison
 - Redirection après paiement : `/success.html` (succès), `/commande.html` (annulation)
 - Prêt pour déploiement Render, Vercel, ou local
+- **Quantité supprimée : l'achat se fait uniquement à l'unité**
 
 ## Prérequis
 - Node.js >= 16
@@ -30,32 +31,3 @@ Ce projet fournit un backend Node.js/Express pour déclencher une session Stripe
    (remplace par ta vraie clé Stripe secrète)
 
 ## Lancement en local
-
-```sh
-node server.js
-```
-
-Le serveur écoute sur http://localhost:4242
-
-## Utilisation côté client
-
-Dans `checkout.html`, le bouton "Commander maintenant" appelle `/create-checkout-session` et redirige automatiquement vers Stripe.
-
-## Déploiement
-
-### Render
-- Crée un nouveau service web sur [Render](https://render.com/)
-- Connecte ton repo ou upload les fichiers
-- Ajoute la variable d'environnement `STRIPE_SECRET_KEY`
-- Commande de démarrage : `node server.js`
-
-### Vercel
-- Déploie comme un projet Node.js (API routes)
-- Ajoute la variable d'environnement `STRIPE_SECRET_KEY`
-
-## Personnalisation
-- Modifie le prix, le nom du produit, ou les champs Stripe dans `server.js` si besoin.
-
----
-
-**Contact :** contact@smartingpen.com 
