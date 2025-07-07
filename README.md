@@ -9,7 +9,7 @@ Ce projet fournit un backend Node.js/Express pour déclencher une session Stripe
 - Limité à la France pour la livraison
 - Redirection après paiement : `/success.html` (succès), `/commande.html` (annulation)
 - Prêt pour déploiement Render, Vercel, ou local
-- **Quantité supprimée : l'achat se fait uniquement à l'unité**
+- **Achat uniquement à l'unité : il n'est pas possible de commander plus d'un produit à la fois**
 
 ## Prérequis
 - Node.js >= 16

@@ -10,8 +10,8 @@ app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
   try {
-    const { email, quantity } = req.body; // récupère l'email et la quantité envoyés depuis le frontend
-    const qty = parseInt(quantity) > 0 ? parseInt(quantity) : 1;
+    const { email } = req.body; // récupère uniquement l'email envoyé depuis le frontend
+    const qty = 1; // quantité fixée à 1
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -26,7 +26,7 @@ app.post('/create-checkout-session', async (req, res) => {
             unit_amount: 8900, // 89€ TTC
             tax_behavior: 'inclusive',
           },
-          quantity: qty, // quantité dynamique
+          quantity: qty, // quantité fixée à 1
         },
       ],
       billing_address_collection: 'required', // récupère nom, prénom, adresse complète
