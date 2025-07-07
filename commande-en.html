@@ -45,9 +45,6 @@
           <div class="commande-desc" style="text-align:center;font-size:1.08rem;color:#222;margin-bottom:16px;">SmartingPen – The pen with ChatGPT that translates 113 languages instantly</div>
           <div class="commande__prix" style="font-size:1.4rem;color:#0077ff;font-weight:700;margin-bottom:18px;">79€ <span class="commande__prix-ttc" style="font-size:1rem;color:#888;font-weight:500;margin-left:4px;">VAT incl.</span></div>
           <div style="font-size:1.08rem;color:#009900;font-weight:600;margin-bottom:10px;">Free shipping in 5-7 days</div>
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-          <div id="total-price" style="font-size:1.2rem;font-weight:600;margin:10px 0;">Total: 89€</div>
           <button id="checkout-btn" class="checkout-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-bottom:18px;width:100%;max-width:320px;">Pay now by card or Apple Pay</button>
           <div class="checkout-payment-desc">100% secure payment. Your data is protected.</div>
           <div class="checkout-payment-logos" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;margin-top:2px;">
@@ -102,29 +99,22 @@
           navMenu.classList.remove('active');
         });
       });
+      
+      // Stripe payment (always 1 product)
+      document.getElementById('checkout-btn').onclick = async function () {
+        const res = await fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ quantity: 1 })
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location = data.url;
+        } else {
+          alert('Error creating Stripe session.');
+        }
+      };
     });
-
-    const unitPrice = 89;
-    const quantityInput = document.getElementById('quantity');
-    const totalPriceDiv = document.getElementById('total-price');
-    quantityInput.addEventListener('input', function() {
-      const qty = parseInt(quantityInput.value) || 1;
-      totalPriceDiv.textContent = `Total: ${qty * unitPrice}€`;
-    });
-    document.getElementById('checkout-btn').onclick = async function () {
-      const qty = parseInt(quantityInput.value) || 1;
-      const res = await fetch('/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity: qty })
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location = data.url;
-      } else {
-        alert('Error creating Stripe session.');
-      }
-    };
   </script>
 </body>
 </html> 
