@@ -43,7 +43,7 @@
             <div style="font-size:1.08rem;color:#222;margin-bottom:18px;">SmartingPen — Le stylo connecté à ChatGPT qui traduit 113 langues instantanément</div>
             <div style="font-size:1.08rem;color:#009900;font-weight:600;margin-bottom:10px;">Livraison gratuite en 5 à 7 jours</div>
             <div style="font-size:1.4rem;color:#0077ff;font-weight:700;margin-bottom:18px;">89€ <span style="font-size:1rem;color:#888;font-weight:500;margin-left:4px;">TTC</span></div>
-            <button id="checkout-btn" class="checkout-btn" style="display:inline-block;text-align:center;text-decoration:none;margin-bottom:18px;width:100%;max-width:320px;">Payer maintenant par carte ou Apple Pay</button>
+            <button id="checkout-button">Commander maintenant</button>
             <div style="font-size:1rem;color:#444;font-weight:500;margin-bottom:16px;">Paiement 100% sécurisé. Vos données sont protégées.</div>
             <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:8px;">
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:32px;width:auto;max-width:48px;object-fit:contain;filter:grayscale(0.2) contrast(1.1);background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.04);padding:2px 4px;">
@@ -95,19 +95,30 @@
       });
 
       // Gestion du paiement Stripe (toujours 1 produit)
-      document.getElementById('checkout-btn').onclick = async function () {
-        const res = await fetch('/create-checkout-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ quantity: 1 })
-        });
-        const data = await res.json();
-        if (data.url) {
-          window.location = data.url;
-        } else {
-          alert('Erreur lors de la création de la session Stripe.');
+      document.getElementById('checkout-button').addEventListener('click', async () => {
+        try {
+          const response = await fetch('https://ton-backend.vercel.app/create-checkout-session', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              email: '',      // Optionnel pour l'instant
+              quantity: 1     // Produit unique
+            })
+          });
+
+          const data = await response.json();
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            alert('Erreur lors de la création de la session de paiement.');
+          }
+        } catch (error) {
+          console.error(error);
+          alert('Une erreur est survenue.');
         }
-      };
+      });
     });
   </script>
 </body>

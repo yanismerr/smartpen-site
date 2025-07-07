@@ -1,9 +1,11 @@
+require('dotenv').config(); // Charge le fichier .env
+
 const express = require('express');
 const Stripe = require('stripe');
 const cors = require('cors');
 
 const app = express();
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Mets ta clé Stripe ici ou dans les variables d'environnement
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Ta clé est chargée depuis .env
 
 app.use(cors());
 app.use(express.json());
@@ -25,7 +27,7 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             unit_amount: 8900, // 89 € TTC
           },
-          quantity: 1,
+          quantity: qty,
         },
       ],
       billing_address_collection: 'required',
